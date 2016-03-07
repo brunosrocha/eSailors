@@ -7,8 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "APIService+Archive.h"
+#import "Report.h"
+#import "WeatherTableViewCell.h"
 
 @interface ViewController ()
+
+@property(nonatomic, weak) IBOutlet UITableView *tableView;
+@property(nonatomic, strong) NSArray *content;
 
 @end
 
@@ -17,11 +23,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.navigationBar.translucent = NO;
+    
+    [[APIService instance] marsArchive:^(NSURLSessionDataTask *task, id object) {
+        
+        self.content = [NSArray arrayWithArray: object];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setContent:(NSArray *)content {
+    
+    _content = content;
+    
+    [_tableView reloadData];
 }
+
+#pragma mark -
+#pragma mark - UITableViewDataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"WeatherTableViewCell"];
+    
+    Report *report = _content[indexPath.row];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return _content.count;
+}
+
+#pragma mark -
+#pragma mark - UITableViewDelegate
 
 @end
