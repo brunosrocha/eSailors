@@ -19,6 +19,7 @@
 		A36B92C11C8DC425002A9548 /* APIService+Archive.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92C01C8DC425002A9548 /* APIService+Archive.m */; };
 		A36B92C51C8DC612002A9548 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92C41C8DC612002A9548 /* Report.m */; };
 		A36B92CA1C8DCE14002A9548 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92C91C8DCE14002A9548 /* WeatherTableViewCell.m */; };
+		A36B92CE1C8DD3D4002A9548 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92CD1C8DD3D4002A9548 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		A36B92C41C8DC612002A9548 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		A36B92C81C8DCE14002A9548 /* WeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewCell.h; sourceTree = "<group>"; };
 		A36B92C91C8DCE14002A9548 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
+		A36B92CC1C8DD3D4002A9548 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		A36B92CD1C8DD3D4002A9548 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,7 @@
 		A36B92C61C8DCDF2002A9548 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A36B92CB1C8DD3C5002A9548 /* DetailsViewController */,
 				A36B92C71C8DCDFB002A9548 /* WeatherTableViewCell */,
 				A304E7A31C8DAC8E00E22B4E /* ViewController.h */,
 				A304E7A41C8DAC8E00E22B4E /* ViewController.m */,
@@ -176,6 +180,15 @@
 				A36B92C91C8DCE14002A9548 /* WeatherTableViewCell.m */,
 			);
 			name = WeatherTableViewCell;
+			sourceTree = "<group>";
+		};
+		A36B92CB1C8DD3C5002A9548 /* DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A36B92CC1C8DD3D4002A9548 /* DetailsViewController.h */,
+				A36B92CD1C8DD3D4002A9548 /* DetailsViewController.m */,
+			);
+			name = DetailsViewController;
 			sourceTree = "<group>";
 		};
 		C7AAA5B9D32886C2CB2A14A6 /* Frameworks */ = {
@@ -353,6 +366,7 @@
 				A36B92C51C8DC612002A9548 /* Report.m in Sources */,
 				A36B92BC1C8DC1E7002A9548 /* APIService.m in Sources */,
 				A304E79F1C8DAC8E00E22B4E /* main.m in Sources */,
+				A36B92CE1C8DD3D4002A9548 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

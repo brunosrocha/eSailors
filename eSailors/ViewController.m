@@ -11,7 +11,7 @@
 #import "Report.h"
 #import "WeatherTableViewCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) NSArray *content;
@@ -52,6 +52,8 @@
     
     Report *report = _content[indexPath.row];
     
+    cell.report = report;
+    
     return cell;
 }
 
@@ -63,4 +65,9 @@
 #pragma mark -
 #pragma mark - UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+}
 @end

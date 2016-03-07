@@ -16,7 +16,16 @@
 
 @end
 
-
 @implementation WeatherTableViewCell
+
+- (void)setReport:(Report *)report {
+
+    _report = report;
+    
+    _dateLabel.text = [NSString stringWithFormat: @"Date: %@", _report.terrestrial_date];
+    _maxTempLabel.text = [NSString stringWithFormat: @"Max temp: %ld", _report.max_temp];
+    _minTempLabel.text = [NSString stringWithFormat: @"Min temp: %ld", _report.min_temp];
+    
+}
 
 @end

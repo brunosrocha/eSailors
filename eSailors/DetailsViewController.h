@@ -1,5 +1,5 @@
 //
-//  WeatherTableViewCell.h
+//  DetailsViewController.h
 //  eSailors
 //
 //  Created by Bruno Rocha on 3/7/16.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Report.h"
 
-@interface WeatherTableViewCell : UITableViewCell
+@interface DetailsViewController : UIViewController
 
-@property(nonatomic, strong) Report *report;
+
 
 @end
