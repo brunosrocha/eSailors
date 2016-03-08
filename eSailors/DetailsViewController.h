@@ -11,6 +11,6 @@
 
 @interface DetailsViewController : UIViewController
 
-
+@property(nonatomic, strong) Report *report;
 
 @end

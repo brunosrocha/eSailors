@@ -20,6 +20,8 @@
 		A36B92C51C8DC612002A9548 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92C41C8DC612002A9548 /* Report.m */; };
 		A36B92CA1C8DCE14002A9548 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92C91C8DCE14002A9548 /* WeatherTableViewCell.m */; };
 		A36B92CE1C8DD3D4002A9548 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92CD1C8DD3D4002A9548 /* DetailsViewController.m */; };
+		A36B92D21C8ED50E002A9548 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92D11C8ED50E002A9548 /* Helper.m */; };
+		A36B92D61C8EDB07002A9548 /* APIService+Latest.m in Sources */ = {isa = PBXBuildFile; fileRef = A36B92D51C8EDB07002A9548 /* APIService+Latest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		A36B92C91C8DCE14002A9548 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
 		A36B92CC1C8DD3D4002A9548 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		A36B92CD1C8DD3D4002A9548 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		A36B92D01C8ED50E002A9548 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		A36B92D11C8ED50E002A9548 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		A36B92D41C8EDB07002A9548 /* APIService+Latest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APIService+Latest.h"; sourceTree = "<group>"; };
+		A36B92D51C8EDB07002A9548 /* APIService+Latest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APIService+Latest.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		A304E79C1C8DAC8E00E22B4E /* eSailors */ = {
 			isa = PBXGroup;
 			children = (
+				A36B92CF1C8ED4FF002A9548 /* Helper */,
 				A36B92C61C8DCDF2002A9548 /* Controllers */,
 				A36B92C21C8DC5F1002A9548 /* Model */,
 				A304E7C21C8DB1E700E22B4E /* APIService */,
@@ -137,6 +144,7 @@
 		A304E7C21C8DB1E700E22B4E /* APIService */ = {
 			isa = PBXGroup;
 			children = (
+				A36B92D31C8EDAE7002A9548 /* Latest */,
 				A36B92BE1C8DC3E0002A9548 /* Archive */,
 				A36B92BA1C8DC1E7002A9548 /* APIService.h */,
 				A36B92BB1C8DC1E7002A9548 /* APIService.m */,
@@ -189,6 +197,24 @@
 				A36B92CD1C8DD3D4002A9548 /* DetailsViewController.m */,
 			);
 			name = DetailsViewController;
+			sourceTree = "<group>";
+		};
+		A36B92CF1C8ED4FF002A9548 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A36B92D01C8ED50E002A9548 /* Helper.h */,
+				A36B92D11C8ED50E002A9548 /* Helper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		A36B92D31C8EDAE7002A9548 /* Latest */ = {
+			isa = PBXGroup;
+			children = (
+				A36B92D41C8EDB07002A9548 /* APIService+Latest.h */,
+				A36B92D51C8EDB07002A9548 /* APIService+Latest.m */,
+			);
+			name = Latest;
 			sourceTree = "<group>";
 		};
 		C7AAA5B9D32886C2CB2A14A6 /* Frameworks */ = {
@@ -360,12 +386,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A304E7A51C8DAC8E00E22B4E /* ViewController.m in Sources */,
+				A36B92D61C8EDB07002A9548 /* APIService+Latest.m in Sources */,
 				A36B92CA1C8DCE14002A9548 /* WeatherTableViewCell.m in Sources */,
 				A36B92C11C8DC425002A9548 /* APIService+Archive.m in Sources */,
 				A304E7A21C8DAC8E00E22B4E /* AppDelegate.m in Sources */,
 				A36B92C51C8DC612002A9548 /* Report.m in Sources */,
 				A36B92BC1C8DC1E7002A9548 /* APIService.m in Sources */,
 				A304E79F1C8DAC8E00E22B4E /* main.m in Sources */,
+				A36B92D21C8ED50E002A9548 /* Helper.m in Sources */,
 				A36B92CE1C8DD3D4002A9548 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

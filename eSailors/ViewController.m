@@ -10,11 +10,16 @@
 #import "APIService+Archive.h"
 #import "Report.h"
 #import "WeatherTableViewCell.h"
+#import "DetailsViewController.h"
+#import "APIService+Latest.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
+@property(nonatomic, weak) IBOutlet UIView *tableViewHeader;
 @property(nonatomic, strong) NSArray *content;
+
+- (IBAction)latestWeatherInfo;
 
 @end
 
@@ -24,6 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationController.navigationBar.translucent = NO;
+    _tableView.tableHeaderView = _tableViewHeader;
+    self.title = @"Mars forecast list";
     
     [[APIService instance] marsArchive:^(NSURLSessionDataTask *task, id object) {
         
@@ -67,7 +74,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath: indexPath animated: YES];
     
+    Report *report = _content[indexPath.row];
+    
+    [self pushDetailView: report];
     
 }
+
+#pragma mark - 
+#pragma mark - IBAction Methnods
+
+- (IBAction)latestWeatherInfo {
+    
+    [[APIService instance] latestWeatherInfo:^(NSURLSessionDataTask *task, id object) {
+        
+        [self pushDetailView: object];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+       
+        [[[UIAlertView alloc] initWithTitle: @"Alert!"
+                                    message: error.localizedDescription
+                                   delegate: nil
+                          cancelButtonTitle: @"OK"
+                          otherButtonTitles: nil, nil] show];
+        
+    }];
+    
+}
+
+- (void)pushDetailView:(Report *)report {
+    
+    DetailsViewController *detailsViewController = [[UIStoryboard storyboardWithName: @"Main" bundle: [NSBundle mainBundle]] instantiateViewControllerWithIdentifier: @"detailsViewController"];
+    detailsViewController.report = report;
+    [self.navigationController pushViewController: detailsViewController animated: YES];
+
+}
+
 @end
