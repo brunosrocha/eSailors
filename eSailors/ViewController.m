@@ -38,6 +38,13 @@
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
+        [[[UIAlertView alloc] initWithTitle: @"Alert!"
+                                    message: error.localizedDescription
+                                   delegate: nil
+                          cancelButtonTitle: @"OK"
+                          otherButtonTitles: nil, nil] show];
+        
+        
     }];
     
 }
